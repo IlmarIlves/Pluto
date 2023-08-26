@@ -3,11 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
-
-  private apiUrl = 'https://services.err.ee/api/v2/category/getByUrl?url=video&domain=jupiter.err.ee'; // fetch data
+  private apiUrl =
+    'https://services.err.ee/api/v2/category/getByUrl?url=video&domain=jupiter.err.ee'; // fetch data
 
   constructor(private http: HttpClient) {}
 
