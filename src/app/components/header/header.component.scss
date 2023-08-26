@@ -1,9 +1,8 @@
 /* Your CSS file */
 .photo-container {
+  position: relative;
   max-width: 100%;
   overflow: hidden;
-  margin-bottom: 20px;
-  position: relative;
 }
 
 .photo-container img {
@@ -11,10 +10,21 @@
   height: auto;
 }
 
-.photo-container span {
+.text-overlay {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   color: white;
-  padding: 5px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-overlay h2 {
+  margin-bottom: 10px;
 }
