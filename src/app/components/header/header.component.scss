@@ -1,0 +1,20 @@
+/* Your CSS file */
+.photo-container {
+  max-width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.photo-container img {
+  width: 100%;
+  height: auto;
+}
+
+.photo-container span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  padding: 5px;
+}

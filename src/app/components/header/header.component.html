@@ -1,7 +1,6 @@
 <div *ngFor="let frontPage of data?.data?.category?.frontPage">
   <div *ngFor="let photo of frontPage.data[0].photos">
-    Caption: {{ photo.captionEt }}
-    <div>
+    <div class="photo-container">
       <img [src]="photo.photoUrlBase" alt="Photo" />
       <span>text</span>
     </div>
