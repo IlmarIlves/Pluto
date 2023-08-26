@@ -1,8 +1,10 @@
-<div *ngFor="let frontPage of data?.data?.category?.frontPage">
-  <div *ngFor="let photo of frontPage.data[0].photos">
-    <div class="photo-container">
-      <img [src]="photo.photoUrlBase" alt="Photo" />
-      <span>text</span>
+<div class="1">
+  <div class="2" *ngFor="let frontPageData of data?.data?.category?.frontPage[0]?.data">
+    <div class="3" *ngFor="let photo of frontPageData.photos">
+      <div class="photo-container">
+        <img [src]="photo.photoUrlBase" alt="Photo" />
+        {{frontPageData.lead}}
+      </div>
     </div>
   </div>
 </div>
