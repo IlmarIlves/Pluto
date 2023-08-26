@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { DataService } from '../../data/data.service';
 
 @Component({
-  selector: 'app-most-watched',
-  templateUrl: './most-watched.component.html',
-  styleUrls: ['./most-watched.component.scss']
+  selector: 'app-categories',
+  templateUrl: './categories.component.html',
+  styleUrls: ['./categories.component.scss']
 })
-export class MostWatchedComponent {
+export class CategoriesComponent {
   data: any | undefined;
 
   constructor(private dataService: DataService) {}

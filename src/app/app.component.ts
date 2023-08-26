@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component'; // Import Header component
-import { DataComponent } from './components/data/data.component'; // Import DataComponent
+import { CategoriesComponent } from './components/categories/categories.component'; // Import DataComponent
 
 @Component({
   selector: 'app-root',
   template: `
     <app-header></app-header>
-    <app-most-watched></app-most-watched>
-    <app-data></app-data>
+    <app-categories></app-categories>
   `,
   styleUrls: ['./app.component.scss'],
 })
