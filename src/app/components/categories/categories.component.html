@@ -1,9 +1,17 @@
-<div>
+<div class="horizontal-scroller">
     <div *ngFor="let frontPageData of data?.data?.category?.frontPage">
-        {{frontPageData.header}}
-        <div *ngFor="let headerData of frontPageData.data">
-            {{headerData.heading}}
+      <div class="scroll-item">
+        <div class="header-divider">
+          <h2>{{ frontPageData.header }}</h2>
         </div>
+        <div *ngFor="let headerData of frontPageData.data">
+          <div class="image-scroller">
+            <div *ngFor="let photoData of headerData.verticalPhotos">
+              <img [src]="photoData.photoUrlBase" alt="Photo" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   
