@@ -6,6 +6,7 @@ import { DataComponent } from './components/data/data.component'; // Import Data
   selector: 'app-root',
   template: `
     <app-header></app-header>
+    <app-most-watched></app-most-watched>
     <app-data></app-data>
   `,
   styleUrls: ['./app.component.scss'],

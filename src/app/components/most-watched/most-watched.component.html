@@ -1,0 +1,9 @@
+<div>
+    <div *ngFor="let frontPageData of data?.data?.category?.frontPage">
+        {{frontPageData.header}}
+        <div *ngFor="let headerData of frontPageData.data">
+            {{headerData.heading}}
+        </div>
+    </div>
+  </div>
+  
