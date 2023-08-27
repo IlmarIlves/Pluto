@@ -4,6 +4,7 @@
   }
   
 .scroll-item {
+  position: relative;
 }
 
 .header-divider {
@@ -36,5 +37,17 @@
 }
 
 .photo-container {
-  display: inline-block
+}
+
+.button-left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 30px;
+}
+.button-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  height: 30px;
 }
