@@ -1,5 +1,6 @@
 /* Your CSS file */
 .horizontal-scroller {
+  overflow-x: hidden;
   }
   
 .scroll-item {
@@ -16,6 +17,8 @@
 }
 
 .header-row h2 {
+  font-size: 35px;
+  font-weight: 200;
   color: white;
 }
 
@@ -27,4 +30,11 @@
 
 .photo-row {
   display: flex;
+  overflow: auto;
+  white-space: nowrap; /* Important to prevent wrapping */
+  padding: 10px; /* Optional: Add padding for spacing */
+}
+
+.photo-container {
+  display: inline-block
 }

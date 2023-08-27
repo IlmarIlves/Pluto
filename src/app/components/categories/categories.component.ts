@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, Renderer2 } from '@angular/core';
 import { DataService } from '../../data/data.service';
 
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.scss']
+  styleUrls: ['./categories.component.scss'],
 })
-export class CategoriesComponent {
+export class CategoriesComponent implements OnInit {
   data: any | undefined;
 
   constructor(private dataService: DataService) {}
@@ -18,7 +18,15 @@ export class CategoriesComponent {
       },
       (error) => {
         console.error('Error fetching data:', error);
-      },
+      }
     );
+  }
+
+  public scrollRight(container: HTMLDivElement): void {
+    container.scrollLeft += 150;
+  }
+
+  public scrollLeft(container: HTMLDivElement): void {
+    container.scrollLeft -= 150;
   }
 }

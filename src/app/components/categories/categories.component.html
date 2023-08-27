@@ -5,13 +5,15 @@
         <div class="header-row">
           <h2>{{ frontPageData.header }}</h2>
         </div>
-        <div class="photo-row">
+        <div #widgetsContent class="photo-row">
           <div *ngFor="let headerData of frontPageData.data">
             <div class="photo-container" *ngFor="let photoData of headerData.verticalPhotos">
               <img [src]="photoData.photoUrlBase" alt="Photo" />
             </div>
           </div>
         </div>
+        <button (click)="scrollLeft(widgetsContent)">Scroll Left</button>
+        <button (click)="scrollRight(widgetsContent)">Scroll Right</button>
       </div>
     </div>
   </div>
