@@ -1,4 +1,12 @@
-import { Component, ElementRef, OnInit, ViewChild, Renderer2, HostListener, ChangeDetectorRef } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+  Renderer2,
+  HostListener,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { DataService } from '../../data/data.service';
 
 @Component({
@@ -9,32 +17,34 @@ import { DataService } from '../../data/data.service';
 export class CategoriesComponent implements OnInit {
   data: any | undefined;
 
-  constructor(private dataService: DataService, private cdr: ChangeDetectorRef,
-    ) {}
+  constructor(
+    private dataService: DataService,
+    private renderer: Renderer2,
+    private cdr: ChangeDetectorRef,
+  ) {}
 
   ngOnInit(): void {
     this.dataService.fetchData().subscribe(
       (response) => {
         this.data = response;
+
+        this.checkButtonVisibility();
       },
       (error) => {
         console.error('Error fetching data:', error);
-      }
+      },
     );
-  }
+      // hack fix, forces show icons on initial render
+      setTimeout(() => {
+        this.checkButtonVisibility();
+      }, 1000);
 
-   showLeftButton(container: HTMLDivElement): boolean {
-    return container.scrollLeft > 0;
-  }
-
-  showRightButton(container: HTMLDivElement): boolean {
-    return container.scrollLeft < (container.scrollWidth - container.clientWidth);
   }
 
   public scrollRight(container: HTMLDivElement): void {
     container.scrollTo({
       left: container.scrollLeft + 1300,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
 
     container.addEventListener('scroll', () => {
@@ -45,7 +55,7 @@ export class CategoriesComponent implements OnInit {
   public scrollLeft(container: HTMLDivElement): void {
     container.scrollTo({
       left: container.scrollLeft - 1300,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
 
     container.addEventListener('scroll', () => {
@@ -53,12 +63,20 @@ export class CategoriesComponent implements OnInit {
     });
   }
 
-    // Function to check button visibility and trigger change detection
-    checkButtonVisibility(): void {
-      this.cdr.detectChanges();
-    }
+  @HostListener('window:resize')
+     onWindowResize(): void {
+       this.checkButtonVisibility();
+     }
+   
 
-    shouldShowScrollItem(frontPageData: any): boolean {
-      return frontPageData.data.some((headerData: any) => headerData.verticalPhotos.length > 0);
-    }
+  // Function to check button visibility and trigger change detection
+  checkButtonVisibility(): void {
+    this.cdr.detectChanges();
+  }
+
+  shouldShowScrollItem(frontPageData: any): boolean {
+    return frontPageData.data.some(
+      (headerData: any) => headerData.verticalPhotos.length > 0,
+    );
+  }
 }

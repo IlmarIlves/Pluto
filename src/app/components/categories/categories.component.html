@@ -6,19 +6,29 @@
           <h2>{{ frontPageData.header }}</h2>
         </div>
         <div #widgetsContent class="photo-row">
-          <button class="button-left" (click)="scrollLeft(widgetsContent)" *ngIf="showLeftButton(widgetsContent)">
-            <
+          <button
+            class="button-left"
+            (click)="scrollLeft(widgetsContent)"
+            *ngIf="widgetsContent.scrollLeft > 0"
+          >
+            <i class="fa-solid fa-angle-left"></i>
           </button>
 
           <div *ngFor="let headerData of frontPageData.data">
-            <div class="photo-container" *ngFor="let photoData of headerData.verticalPhotos">
+            <div
+              class="photo-container"
+              *ngFor="let photoData of headerData.verticalPhotos"
+            >
               <img [src]="photoData.photoUrlBase" alt="Photo" />
             </div>
           </div>
-          <button class="button-right" (click)="scrollRight(widgetsContent)" *ngIf="showRightButton(widgetsContent)">
-            >
+          <button
+            class="button-right"
+            (click)="scrollRight(widgetsContent)"
+            *ngIf="widgetsContent.scrollLeft < (widgetsContent.scrollWidth - widgetsContent.clientWidth)"
+          >
+            <i class="fa-solid fa-angle-right"></i>
           </button>
-
         </div>
       </div>
     </div>

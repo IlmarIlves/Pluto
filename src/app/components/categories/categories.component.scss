@@ -1,8 +1,12 @@
+/* styles.scss or styles.css */
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+
 /* Your CSS file */
 .horizontal-scroller {
   overflow-x: hidden;
-  }
-  
+}
+
 .scroll-item {
   position: relative;
 }
@@ -14,7 +18,7 @@
 }
 
 .image-scroller {
-  padding: 10px; 
+  padding: 10px;
 }
 
 .header-row h2 {
