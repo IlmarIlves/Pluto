@@ -1,12 +1,13 @@
 <div class="horizontal-scroller">
-    <div *ngFor="let frontPageData of data?.data?.category?.frontPage">
-      <div class="scroll-item">
-        <div class="header-divider">
+  <div *ngFor="let frontPageData of data?.data?.category?.frontPage">
+    <div class="scroll-item">
+      <div class="image-scroller">
+        <div class="header-row">
           <h2>{{ frontPageData.header }}</h2>
         </div>
-        <div *ngFor="let headerData of frontPageData.data">
-          <div class="image-scroller">
-            <div *ngFor="let photoData of headerData.verticalPhotos">
+        <div class="photo-row">
+          <div *ngFor="let headerData of frontPageData.data">
+            <div class="photo-container" *ngFor="let photoData of headerData.verticalPhotos">
               <img [src]="photoData.photoUrlBase" alt="Photo" />
             </div>
           </div>
@@ -14,4 +15,4 @@
       </div>
     </div>
   </div>
-  
+</div>
