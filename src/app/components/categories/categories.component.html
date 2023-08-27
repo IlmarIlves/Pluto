@@ -1,6 +1,6 @@
 <div class="horizontal-scroller">
   <div *ngFor="let frontPageData of data?.data?.category?.frontPage">
-    <div class="scroll-item">
+    <div class="scroll-item" *ngIf="shouldShowScrollItem(frontPageData)">
       <div class="image-scroller">
         <div class="header-row">
           <h2>{{ frontPageData.header }}</h2>

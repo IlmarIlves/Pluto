@@ -57,4 +57,8 @@ export class CategoriesComponent implements OnInit {
     checkButtonVisibility(): void {
       this.cdr.detectChanges();
     }
+
+    shouldShowScrollItem(frontPageData: any): boolean {
+      return frontPageData.data.some((headerData: any) => headerData.verticalPhotos.length > 0);
+    }
 }
