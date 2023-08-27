@@ -7,7 +7,7 @@
         </div>
         <div #widgetsContent class="photo-row">
           <button
-            class="button-left"
+            class="button-left circle-button"
             (click)="scrollLeft(widgetsContent)"
             *ngIf="widgetsContent.scrollLeft > 0"
           >
@@ -23,7 +23,7 @@
             </div>
           </div>
           <button
-            class="button-right"
+            class="button-right circle-button"
             (click)="scrollRight(widgetsContent)"
             *ngIf="widgetsContent.scrollLeft < (widgetsContent.scrollWidth - widgetsContent.clientWidth)"
           >

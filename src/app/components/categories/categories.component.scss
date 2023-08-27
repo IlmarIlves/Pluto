@@ -39,15 +39,41 @@
   white-space: nowrap; /* Important to prevent wrapping */
 }
 
+.button-wrap {
+  right: 0;
+  background: linear-gradient(to right,var(--carousel-arrow-bg-grad-start) 0%,var(--carousel-arrow-bg-grad-start) 15%,var(--carousel-arrow-bg-grad-end) 85%,var(--carousel-arrow-bg-grad-end) 100%);
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
 .button-left {
   position: absolute;
   left: 0;
-  top: 50%;
+  top: 56%;
   height: 30px;
+
 }
 .button-right {
   position: absolute;
   right: 0;
-  top: 50%;
+  top: 56%;
   height: 30px;
+
 }
+
+.circle-button {
+  background-color: #ffffff; /* Background color of the circle */
+  border-radius: 50%; /* Make it a circle */
+  padding: 5px; /* Adjust padding for the circle size */
+  display: inline-flex; /* Keep the icon centered within the circle */
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 8px;
+}
+
+.circle-button i {
+  font-size: 18px; /* Adjust icon size */
+}
+

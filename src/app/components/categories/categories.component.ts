@@ -34,7 +34,8 @@ export class CategoriesComponent implements OnInit {
         console.error('Error fetching data:', error);
       },
     );
-      // hack fix, forces show icons on initial render
+      // hack fix, forces show some icons on initial render, need to research further
+      // icons are shown correctly when refreshed
       setTimeout(() => {
         this.checkButtonVisibility();
       }, 1000);
