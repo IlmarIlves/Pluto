@@ -23,10 +23,16 @@ export class CategoriesComponent implements OnInit {
   }
 
   public scrollRight(container: HTMLDivElement): void {
-    container.scrollLeft += 150;
+    container.scrollTo({
+      left: container.scrollLeft + 1300,
+      behavior: 'smooth'
+    });
   }
 
   public scrollLeft(container: HTMLDivElement): void {
-    container.scrollLeft -= 150;
+    container.scrollTo({
+      left: container.scrollLeft - 1300,
+      behavior: 'smooth'
+    });
   }
 }

@@ -30,7 +30,7 @@
 
 .photo-row {
   display: flex;
-  overflow: auto;
+  overflow: hidden;
   white-space: nowrap; /* Important to prevent wrapping */
   padding: 10px; /* Optional: Add padding for spacing */
 }
